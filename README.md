@@ -27,4 +27,5 @@ UNDERTALEの影響を受けたPythonのゲーム。
 
 ## クレジット
 Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX。
+
 sjkim04 (のむチュウ) - 全てのコード。
