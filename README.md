@@ -21,3 +21,6 @@ UNDERTALEの影響を受けたPythonのゲーム。
 ## 情報
 テキストファイルによるセーブに対応する予定です。現在は日本語のみになっています。
 現在作成中。時間がある時にやっています。
+
+## クレジット
+Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX
