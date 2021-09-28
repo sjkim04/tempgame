@@ -29,3 +29,8 @@ UNDERTALEの影響を受けたPythonのゲーム。
 Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX。
 
 sjkim04 (のむチュウ) - 全てのコード。
+
+
+## To-do
+- [ ] Upload all codes and sounds at the time
+- [ ] Link with VSCode
