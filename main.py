@@ -57,7 +57,7 @@ def char_make():
     sleep(5)
     type('キャラクターの名前は?')
     charaname = input()
-    if charaname == "Gaster" or charaname == "gaster" or charaname == "ガスター" or charaname == "がすたー":
+    if charaname.lower() == "gaster" or charaname == "ガスター" or charaname == "がすたー":
         gaster_reboot()
     type('男性、それとも女性?')
     gender = input()
