@@ -34,4 +34,4 @@ sjkim04 (のむチュウ) - 全てのコード。
 ## To-do
 [#1][i1]
 
-[i1]: /../../sjkim04/tempgame#1
+[i1]: /../../sjkim04/tempgame/issues/1
