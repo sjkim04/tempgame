@@ -34,3 +34,4 @@ sjkim04 (のむチュウ) - 全てのコード。
 ## To-do
 - [ ] Upload all codes and sounds at the time
 - [ ] Link with VSCode
+(#1)
