@@ -1,6 +1,6 @@
 # *U*ntitled *U*NDERTALE-*i*nspired *G*ame
 
-**English** | [Japanese](#*U*ntitled *U*NDERTALE-*i*nspired *G*ame-1)
+**English** | [Japanese](#Untitled UNDERTALE-inspired Game-1)
 
 A Python game inspired by UNDERTALE.
 
