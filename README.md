@@ -2,6 +2,7 @@
 **U**ntitled **U**NDERTALE-**i**nspired **G**ame
 
 
+
 **English** | [Japanese](#UUiG-1)
 
 A Python game inspired by UNDERTALE.
@@ -18,6 +19,7 @@ sjkim04 (のむチュウ) for all codes.
 
 # UUiG
 **U**ntitled **U**NDERTALE-**i**nspired **G**ame
+
 
 
 [English](#UUiG) | **Japanese**
