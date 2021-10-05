@@ -1,6 +1,6 @@
-# PythonGame
+# *U*ntitled *U*NDERTALE-*i*nspired *G*ame
 
-**English** | [Japanese](#PythonGame-1)
+**English** | [Japanese](#*U*ntitled *U*NDERTALE-*i*nspired *G*ame-1)
 
 A Python game inspired by UNDERTALE.
 
@@ -14,7 +14,7 @@ WIP, working on it when I have time.
 sjkim04 (のむチュウ) for all codes.
 
 
-# PythonGame
+# *U*ntitled *U*NDERTALE-*i*nspired *G*ame
 
 [English](#PythonGame) | **Japanese**
 
