@@ -1,4 +1,6 @@
 # UUiG
+**U**ntitled **U**NDERTALE-**i**nspired **G**ame
+
 
 **English** | [Japanese](#UUiG-1)
 
@@ -15,6 +17,8 @@ sjkim04 (のむチュウ) for all codes.
 
 
 # UUiG
+**U**ntitled **U**NDERTALE-**i**nspired **G**ame
+
 
 [English](#UUiG) | **Japanese**
 
