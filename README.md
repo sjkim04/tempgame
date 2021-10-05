@@ -1,6 +1,6 @@
-# Untitled Undertale Inspired Game
+# UUiG
 
-**English** | [Japanese](#Untitled Undertale Inspired Game-1)
+**English** | [Japanese](#UUiG-1)
 
 A Python game inspired by UNDERTALE.
 
@@ -14,9 +14,9 @@ WIP, working on it when I have time.
 sjkim04 (のむチュウ) for all codes.
 
 
-# Untitled Undertale-Inspired Game
+# UUiG
 
-[English](#Untitled Undertale Inspired Game) | **Japanese**
+[English](#UUiG) | **Japanese**
 
 UNDERTALEの影響を受けたPythonのゲーム。
 
