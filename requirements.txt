@@ -1,2 +1,2 @@
-pygame # for playing sounds
+pygame==1.9.6 # for playing sounds
 pytest # for builds
