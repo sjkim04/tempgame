@@ -1,1 +1,2 @@
-pygame
+pygame # for playing sounds
+pytest # for builds
