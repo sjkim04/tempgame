@@ -5,6 +5,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
 [![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
 
+
 **English** | [Japanese](#UUiG-1)
 
 A Python game inspired by UNDERTALE.
@@ -22,6 +23,9 @@ sjkim04 (のむチュウ) for all codes.
 # UUiG
 **U**ntitled **U**NDERTALE-**i**nspired **G**ame
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
+[![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
 
 
 [English](#UUiG) | **Japanese**
@@ -40,6 +44,6 @@ sjkim04 (のむチュウ) - 全てのコード。
 
 
 ## To-do
-[プロジェクト][p2]参照
+Check [project][p2] / [プロジェクト][p2]参照
 
 [p2]: /../../projects/2
