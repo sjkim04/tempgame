@@ -9,7 +9,7 @@ mixer.init()
 
 reboot = 0
 
-def type(words, voice='default', offset=0.1): # typing effect
+def typing(words, voice='default', offset=0.1): # typing effect
     for char in words:
         sleep(offset)
         sys.stdout.write(char)
@@ -36,12 +36,12 @@ def text_sound(voice='default'): # voices for type()
 
 def game_start():
     mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1)
-    type('始めたいなら「y」', 'default')
+    typing('始めたいなら「y」', 'default')
     shoken1 = input()
     if shoken1 == 'y':
         gameover('ちなみに外来語使うと死ぬよー')
     elif shoken1 == '':
-        type('または「始める」を入力')
+        typing('または「始める」を入力')
         gamestart = input('')
         if gamestart == '始める' or gamestart == 'はじめる':
             text_sound('select')
@@ -53,31 +53,31 @@ def game_start():
 
 def char_make():
     mixer.Channel(1).play(mixer.Sound('bgm\\chara_make.wav'), loops=-1)
-    type('あなたのキャラクターを作成します。')
+    typing('あなたのキャラクターを作成します。')
     sleep(5)
-    type('キャラクターの名前は?')
+    typing('キャラクターの名前は?')
     charaname = input()
     if charaname.lower() == "gaster" or charaname == "ガスター" or charaname == "がすたー":
         gaster_reboot()
-    type('男性、それとも女性?')
+    typing('男性、それとも女性?')
     gender = input()
-    type('以上でよろしいですか?')
+    typing('以上でよろしいですか?')
     sleep(1)
-    type('名前: '+charaname)
+    typing('名前: '+charaname)
     sleep(1)
-    type('性別: '+gender)
+    typing('性別: '+gender)
     sleep(3)
-    type('OK/...')
+    typing('OK/...')
     chara_fakeconf = input()
     if chara_fakeconf == 'OK':
         gameover('OKって英語だよねー？')
     elif chara_fakeconf == '...' or chara_fakeconf == '..':
-        type('あれ、何か不満？')
+        typing('あれ、何か不満？')
         sleep(2.3)
-        type('だったらこっちで準備した設定でやるねー')
+        typing('だったらこっちで準備した設定でやるねー')
         mixer.Channel(1).fadeout(5000)
         sleep(3)
-        type('GAME START', 'sans', 0.3)
+        typing('GAME START', 'sans', 0.3)
     elif chara_fakeconf == "":
         gameover('いやいや、真面目に聞いてる?　とりあえず殺したから！')
     else:
@@ -86,9 +86,9 @@ def char_make():
         
 def gameover(message):
     mixer.Channel(1).play(mixer.Sound('bgm\\gameover.wav'))
-    type('GAME OVER', voice='default2', offset=0.6)
+    typing('GAME OVER', voice='default2', offset=0.6)
     sleep(3)
-    type(message, 'default2', 0.07)
+    typing(message, 'default2', 0.07)
     mixer.Channel(1).fadeout(5000)
     sleep(5)
     sys.exit()
