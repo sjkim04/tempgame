@@ -20,7 +20,6 @@ def game_start():
         typing('または「始める」を入力')
         gamestart = input('')
         if gamestart == '始める' or gamestart == 'はじめる':
-            text_sound('select')
             char_make()
         else:
             gameover('うん。変なの入力するな。')
