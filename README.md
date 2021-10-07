@@ -4,6 +4,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
 [![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
+[![Last commit](https://badgen.net/badge/github/last-commit/micromatch/micromatch)
 
 
 **English** | [Japanese](#UUiG-1)
