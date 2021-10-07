@@ -1,7 +1,7 @@
 # UUiG
 **U**ntitled **U**NDERTALE-**i**nspired **G**ame
 
-
+[![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
 
 **English** | [Japanese](#UUiG-1)
 
