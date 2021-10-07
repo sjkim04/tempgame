@@ -45,5 +45,6 @@ sjkim04 (のむチュウ) - 全てのコード。
 
 ## To-do
 Check [project][p2] / [プロジェクト][p2]参照
+https://badgen.net/github/milestones/chrislgarry/Apollo-11/1
 
 [p2]: /../../projects/2
