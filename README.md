@@ -3,6 +3,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
+
 **English** | [Japanese](#UUiG-1)
 
 A Python game inspired by UNDERTALE.
