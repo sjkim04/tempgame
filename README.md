@@ -3,6 +3,7 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![CodeFactor](https://www.codefactor.io/repository/github/sjkim04/uuig/badge)](https://www.codefactor.io/repository/github/sjkim04/uuig)
+![Codacy grade](https://img.shields.io/codacy/grade/5b481779574d43c1970889e683dc38af)
 [![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
 
 
