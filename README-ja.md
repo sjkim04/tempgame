@@ -24,4 +24,4 @@ Check [project][p2] / [プロジェクト][p2]参照
 
 [![Milestone Progress](https://badgen.net/github/milestones/sjkim04/uuig/1)](https://github.com/sjkim04/uuig/milestones/1)
 
-[p2]: /../../projects/2_
+[p2]: /../../projects/2
