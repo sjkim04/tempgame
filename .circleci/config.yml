@@ -35,7 +35,14 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
           name: Run tests
-          command: coverage run tests/main.py < tests/input.txt; coverage xml
+          command: coverage run tests/main.py < tests/input.txt
+      - run:
+          name: Export XML
+          command: |
+            coverage report
+            coverage xml
+      - store-artifacts:
+         path: /
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
