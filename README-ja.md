@@ -7,6 +7,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
 [![CircleCI](https://circleci.com/gh/sjkim04/uuig/tree/main.svg?style=shield)](https://circleci.com/gh/sjkim04/uuig/tree/main)
 
+[English](README.md) / **Japanese**
+
 UNDERTALEの影響を受けたPythonのゲーム。
 
 ## 情報
