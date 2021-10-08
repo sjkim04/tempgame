@@ -36,7 +36,9 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
           name: Run tests
-          command: coverage run tests/main.py < tests/input.txt
+          command: |
+             coverage run tests/main.py < tests/input.txt
+             coverage run tests/main.py < tests/input1.txt
       - run:
           name: Export XML
           command: |
