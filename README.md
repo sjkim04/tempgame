@@ -37,7 +37,6 @@ Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX。
 
 sjkim04 (のむチュウ) - 全てのコード。
 
-
 ## To-do
 Check [project][p2] / [プロジェクト][p2]参照
 
