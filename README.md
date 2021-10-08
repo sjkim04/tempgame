@@ -15,7 +15,8 @@ A Python game inspired by UNDERTALE.
 
 ## Information
 
-This is a game which will implement text saving and so on. Currently only supports Japanese.
+This is a game which will implement text saving and so on.
+Currently only supports Japanese.
 WIP, working on it when I have time.
 
 ## Credits
