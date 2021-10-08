@@ -38,11 +38,10 @@ jobs:
           name: Run tests
           command: |
              coverage run tests/main.py < tests/input.txt
-             coverage run tests/main.py < tests/input1.txt
+             coverage run --append tests/main.py < tests/input1.txt
       - run:
           name: Export XML
           command: |
-            coverage combine
             coverage report
             coverage xml
       - coverage-reporter/send_report:
