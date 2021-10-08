@@ -43,7 +43,7 @@ jobs:
             coverage report
             coverage xml
       - coverage-reporter/send_report:
-          coverage-reports: report.xml 
+          coverage-reports: report.xml
           project-token: 5b481779574d43c1970889e683dc38af
 
 # Invoke jobs via workflows
