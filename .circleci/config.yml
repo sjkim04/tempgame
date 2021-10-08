@@ -41,7 +41,7 @@ jobs:
           command: |
             coverage report
             coverage xml
-      - store-artifacts:
+      - store_artifacts:
          path: /
 
 # Invoke jobs via workflows
