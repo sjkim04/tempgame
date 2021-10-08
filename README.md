@@ -7,8 +7,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/sjkim04/uuig/badge.svg)](https://snyk.io/test/github/sjkim04/uuig)
 [![CircleCI](https://circleci.com/gh/sjkim04/uuig/tree/main.svg?style=shield)](https://circleci.com/gh/sjkim04/uuig/tree/main)
 
-**English** | [Japanese](#UUiG-1)
-
 A Python game inspired by UNDERTALE.
 
 ## Information
@@ -19,26 +17,6 @@ WIP, working on it when I have time.
 [UNDERTALE](https://undertale.com) and Toby Fox for SFX/BGM.
 
 sjkim04 (のむチュウ) for all codes.
-
----
-
-# UUiG
-
-**U**ntitled **U**NDERTALE-**i**nspired **G**ame
-
-[English](#UUiG) | **Japanese**
-
-UNDERTALEの影響を受けたPythonのゲーム。
-
-## 情報
-テキストファイルによるセーブに対応する予定です。現在は日本語のみになっています。
-
-現在作成中。時間がある時にやっています。
-
-## クレジット
-Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX。
-
-sjkim04 (のむチュウ) - 全てのコード。
 
 ## To-do
 Check [project][p2] / [プロジェクト][p2]参照
