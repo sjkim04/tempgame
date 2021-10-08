@@ -1,5 +1,6 @@
 
 # UUiG
+
 **U**ntitled **U**NDERTALE-**i**nspired **G**ame
 
 **English** / [Japanese](README-ja.md)
@@ -13,16 +14,19 @@
 A Python game inspired by UNDERTALE.
 
 ## Information
+
 This is a game which will implement text saving and so on. Currently only supports Japanese.
 WIP, working on it when I have time.
 
 ## Credits
+
 [UNDERTALE](https://undertale.com) and Toby Fox for SFX/BGM.
 
 sjkim04 (のむチュウ) for all codes.
 
 ## To-do
-Check [project][p2] / [プロジェクト][p2]参照
+
+Check [project][p2]
 
 [![Milestone Progress](https://badgen.net/github/milestones/sjkim04/uuig/1)](https://github.com/sjkim04/uuig/milestones/1)
 
