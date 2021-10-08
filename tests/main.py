@@ -54,7 +54,7 @@ def char_make():
         gameover('いやいや、真面目に聞いてる?　とりあえず殺したから！')
     else:
         gameover('なんでも入力した＝死だから…')
-    
+
 def gameover(message):
     typing('GAME OVER', voice='default2', offset=0.6)
     sleep(3)
