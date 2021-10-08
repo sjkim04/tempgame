@@ -42,6 +42,7 @@ jobs:
       - run:
           name: Export XML
           command: |
+            coverage combine
             coverage report
             coverage xml
       - coverage-reporter/send_report:
