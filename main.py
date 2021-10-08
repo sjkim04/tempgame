@@ -83,7 +83,6 @@ def char_make():
     else:
         gameover('なんでも入力した＝死だから…')
 
-        
 def gameover(message):
     mixer.Channel(1).play(mixer.Sound('bgm\\gameover.wav'))
     typing('GAME OVER', voice='default2', offset=0.6)
