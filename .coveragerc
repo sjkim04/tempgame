@@ -1,2 +1,2 @@
 [xml]
-output = tests/report.xml
+output = xml/report.xml
