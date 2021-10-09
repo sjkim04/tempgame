@@ -66,5 +66,3 @@ def gaster_reboot():
     if reboot >= 3:
         gameover('Nope, don\'t play with him! Just die then.')
     char_make()
-
-game_start()
