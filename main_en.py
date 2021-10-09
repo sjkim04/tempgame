@@ -97,4 +97,3 @@ def gaster_reboot():
         gameover('Nope, don\'t play with him! Just die then.')
     char_make()
 
-game_start()
