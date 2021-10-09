@@ -50,7 +50,7 @@ def char_make():
         typing('だったらこっちで準備した設定でやるねー')
         sleep(3)
         typing('GAME START', 'sans', 0.3)
-    elif chara_fakeconf == " ":
+    elif len(chara_fakeconf) >= 5:
         gameover('いやいや、真面目に聞いてる?　とりあえず殺したから！')
     else:
         gameover('なんでも入力した＝死だから…')
