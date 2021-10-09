@@ -1,5 +1,6 @@
 from time import sleep # the module that has the ability of The World
 import sys # for killing the program when GAME OVERed
+import main_en as en
 
 reboot = 0
 
@@ -10,7 +11,17 @@ def typing(words, voice='default', offset=0.1): # typing effect
         sys.stdout.flush()
     print()
 
-def game_start():
+def langsel():
+    typing('Please select your language.')
+    sleep(1)
+    typing('English/日本語')
+    lang = input()
+    if lang.lower() == 'english':
+        en.game_start()
+    else:
+        jap()
+
+def jap():
     typing('始めたいなら「y」', 'default')
     shoken1 = input()
     if shoken1 == 'y':
@@ -69,4 +80,4 @@ def gaster_reboot():
         gameover('お前らさーガスヒカリで遊ぶなよ！ということで殺します。')
     char_make()
 
-game_start()
+langsel()
