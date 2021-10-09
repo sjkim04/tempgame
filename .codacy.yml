@@ -4,3 +4,4 @@ engines:
       exclude_paths:
          - "tests/main.py"
          - "tests/main_en.py"
+         - "main_en.py"
