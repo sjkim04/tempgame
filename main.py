@@ -1,5 +1,6 @@
 from time import sleep # the module that has the ability of The World
 import sys # for killing the program when GAME OVERed
+import main_en as en
 
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # hiding that f**king annoying message
@@ -34,7 +35,17 @@ def text_sound(voice='default'): # voices for type()
         mixer.music.load('voices\\papyrus.wav')
         mixer.music.play()
 
-def game_start():
+def langsel():
+    typing('Please select your language.')
+    sleep(1)
+    typing('English/日本語')
+    lang = input()
+    if lang.lower() == 'english':
+        en.game_start()
+    else:
+        jap()
+
+def jap():
     mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1)
     typing('始めたいなら「y」', 'default')
     shoken1 = input()
@@ -99,4 +110,4 @@ def gaster_reboot():
         gameover('お前らさーガスヒカリで遊ぶなよ！ということで殺します。')
     char_make()
 
-game_start()
+langsel()
