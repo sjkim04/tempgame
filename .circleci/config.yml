@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-             coverage run tests/main.py < tests/inputs/input.txt
+             coverage run tests/main.py < tests/inputs/ja/input.txt
              coverage run --append tests/main.py < tests/inputs/ja/input1.txt
              coverage run --append tests/main.py < tests/inputs/ja/input2.txt
              coverage run --append tests/main.py < tests/inputs/ja/input3.txt
