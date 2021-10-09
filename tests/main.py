@@ -63,8 +63,6 @@ def char_make():
         typing('GAME START', 'sans', 0.3)
     elif len(chara_fakeconf) >= 5 or chara_fakeconf == '':
         gameover('いやいや、真面目に聞いてる?　とりあえず殺したから！')
-    else:
-        gameover('なんでも入力した＝死だから…')
 
 def gameover(message):
     typing('GAME OVER', voice='default2', offset=0.6)
