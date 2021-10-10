@@ -30,13 +30,13 @@ jobs:
       - run:
           name: Run tests
           command: |
-             coverage run tests/main.py < tests/inputs/ja/input.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input1.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input2.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input3.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input4.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input5.txt
-             coverage run --append tests/main.py < tests/inputs/ja/input6.txt
+             pipenv run coverage run tests/main.py < tests/inputs/ja/input.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input1.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input2.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input3.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input4.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input5.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input6.txt
       - run:
           name: Export XML
           command: |
