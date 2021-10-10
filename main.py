@@ -36,9 +36,8 @@ def text_sound(voice='default'): # voices for type()
         mixer.music.play()
 
 def langsel():
-    typing('Please select your language.')
-    sleep(1)
-    typing('English/日本語')
+    print('Please select your language.')
+    print('English/日本語')
     lang = input()
     if lang.lower() == 'english':
         en.game_start()
