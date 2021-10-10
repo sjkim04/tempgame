@@ -12,9 +12,8 @@ def typing(words, voice='default', offset=0.1): # typing effect
     print()
 
 def langsel():
-    typing('Please select your language.')
-    sleep(1)
-    typing('English/日本語')
+    print('Please select your language.')
+    print('English/日本語')
     lang = input()
     if lang.lower() == 'english':
         en.game_start()
