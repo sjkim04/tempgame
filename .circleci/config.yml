@@ -41,8 +41,8 @@ jobs:
       - run:
           name: Export XML
           command: |
-            coverage report
-            coverage xml
+            pipenv run coverage report
+            pipenv run coverage xml
       - coverage-reporter/send_report:
           coverage-reports: report.xml
           project-token: 5b481779574d43c1970889e683dc38af
