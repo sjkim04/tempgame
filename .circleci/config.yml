@@ -23,15 +23,11 @@ jobs:
        PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
-      - restore_cache:  # ensure this step occurs *before* installing dependencies
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - python/install-packages:
           pkg-manager: pipenv
           args: install -r requirements.txt
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
-      - save_cache:
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           name: Run tests
           command: |
