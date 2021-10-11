@@ -24,12 +24,14 @@ jobs:
     steps:
       - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/loacl/lib/python3.7/site-packages
       - restore_cache:
            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-      - run:
-         command: |
-            sudo pip install pipenv
-            pipenv install
+      - python/install-packages:
+          pkg-manager: pipenv
+          args: install -r requirements.txt
+          # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
+          # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
