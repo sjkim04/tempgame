@@ -31,6 +31,6 @@ sjkim04 (のむチュウ) for all codes.
 
 Check [project][p2]
 
-[![Milestone Progress](https://img.shields.io/github/milestones/progress/sjkim04/uuig/1](https://github.com/sjkim04/uuig/milestone/1)
+[![Milestone Progress](https://img.shields.io/github/milestones/progress/sjkim04/uuig/1)](https://github.com/sjkim04/uuig/milestone/1)
 
 [p2]: /../../projects/2
