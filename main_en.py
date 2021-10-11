@@ -48,6 +48,8 @@ def game_start():
             char_make()
         else:
             gameover('Yep. Don\'t enter anything else.')
+    elif shoken1.lower() == 'n':
+        gameover('Die then. Don\'t come back.')
     else:
         gameover('You\'ll just die when you type anything else.')
 
@@ -59,7 +61,7 @@ def char_make():
     charaname = input()
     if charaname.lower() == "gaster":
         gaster_reboot()
-    typing('What is your sexuality? (M/F)')
+    typing('What is your gender? (M/F)')
     gender = input()
     if gender.upper() != 'M' or gender.upper() != 'Y':
       gameover('Uhhh, what are you then?')
