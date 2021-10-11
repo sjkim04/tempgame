@@ -11,7 +11,7 @@
 [![CircleCI](https://circleci.com/gh/sjkim04/uuig/tree/main.svg?style=shield)](https://circleci.com/gh/sjkim04/uuig/tree/main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/e75e8650e403455da9e3380f101d2af6)](https://www.codacy.com/gh/sjkim04/uuig/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sjkim04/uuig&amp;utm_campaign=Badge_Coverage)
 
-A Python game inspired by UNDERTALE.
+A Python game heavily inspired by UNDERTALE.
 
 ## Information
 
