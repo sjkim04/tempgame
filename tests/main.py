@@ -32,6 +32,8 @@ def jap():
             char_make()
         else:
             gameover('うん。変なの入力するな。')
+    elif shoken1.lower() == 'n':
+        gameover('なら死ね')
     else:
         gameover('なんでも入力したところで死ぬよ')
 
