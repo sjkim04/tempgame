@@ -26,6 +26,10 @@ Toby Fox - [UNDERTALE](https://undertale.com)とその音楽/SFX。
 
 sjkim04 (のむチュウ) - 全てのコード。
 
+## プレイ方法
+
+[このサイト](https://replit.com/@SungjuneKim/uuig-1)でプレイできます！
+
 ## To-do
 
 [プロジェクト][p2]参照
