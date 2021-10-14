@@ -29,7 +29,7 @@ jobs:
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
       - restore_cache:
-           keys:
+           key:
               deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
               deps9-
       - python/install-packages:
@@ -38,7 +38,7 @@ jobs:
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
       - save_cache:
-          keys:
+          key:
              deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
              deps9-
           paths:
