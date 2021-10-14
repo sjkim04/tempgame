@@ -43,6 +43,11 @@ jobs:
             - "/home/circleci/project/.venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.8/dist-packages"
+      - store_artifacts:
+         path: |
+            Pipfile
+            Pipfile.lock
+         
       - run:
           name: Run tests
           command: |
