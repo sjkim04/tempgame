@@ -30,8 +30,7 @@ jobs:
             sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
       - restore_cache:
            key:
-              deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-              deps9-
+              v1-deps9-{{ .Branch }}-cv58
       - python/install-packages:
           pkg-manager: pipenv
           args: install -r requirements.txt
@@ -39,8 +38,7 @@ jobs:
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
       - save_cache:
           key:
-             deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-             deps9-
+             v1-deps9-{{ .Branch }}-cv58
           paths:
             - "/home/circleci/project/.venv"
             - "/usr/local/bin"
