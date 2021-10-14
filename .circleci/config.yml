@@ -23,7 +23,11 @@ jobs:
        PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: 
+         name: Give dependencies access
+         command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
       - restore_cache:
            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - python/install-packages:
@@ -34,9 +38,9 @@ jobs:
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ".venv"
+            - "/home/circleci/project/.venv"
             - "/usr/local/bin"
-            - "/usr/local/lib/python3.8/site-packages"
+            - "/usr/local/lib/python3.8/dist-packages"
       - run:
           name: Run tests
           command: |
