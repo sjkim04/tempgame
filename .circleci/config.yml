@@ -44,10 +44,9 @@ jobs:
             - "/usr/local/bin"
             - "/usr/local/lib/python3.8/dist-packages"
       - store_artifacts:
-         path: |
-            Pipfile
-            Pipfile.lock
-         
+         path: Pipfile
+      - store_artifacts:
+         path: Pipfile.lock
       - run:
           name: Run tests
           command: |
