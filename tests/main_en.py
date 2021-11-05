@@ -32,7 +32,7 @@ def char_make():
     charaname = input()
     if charaname.lower() == "gaster":
         gaster_reboot()
-    typing('What is your sexuality? (M/F)')
+    typing('What is your gender? (M/F)')
     gender = input()
     if gender.upper() != 'M' or gender.upper() != 'Y':
       gameover('Uhhh, what are you then?')
