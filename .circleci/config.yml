@@ -8,7 +8,6 @@ orbs:
   # Python Orb documentation: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.4
   coverage-reporter: codacy/coverage-reporter@13.4
-  gh: circleci/github-cli@1.0.4
 
 # Jobs Docs: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -24,6 +23,10 @@ jobs:
        PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
+      - run:
+         name: Git config
+         command: |
+            git config --global user.email "sungntung@gmail.com"
       - run: 
          name: Give dependencies access
          command: |
