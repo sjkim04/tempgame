@@ -88,7 +88,7 @@ jobs:
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input5.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input6.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input7.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/enUp/input8.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input8.txt
       - run:
           name: Export XML
           command: |
