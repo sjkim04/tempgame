@@ -24,7 +24,8 @@ jobs:
        PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
-      - gh/setup
+      - gh/setup:
+         context: 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
       - run: 
          name: Give dependencies access
          command: |
