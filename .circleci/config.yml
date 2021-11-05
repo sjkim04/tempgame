@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - gh/setup:
-         context: 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
+         token: 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
       - run: 
          name: Give dependencies access
          command: |
