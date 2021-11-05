@@ -52,7 +52,7 @@ jobs:
           name: Check Pipfile
           command: |
              sha256sum Pipfile > Pipflie256.txt
-             if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]" fi
+             if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]"; fi
       - run:
           name: Run tests
           command: |
