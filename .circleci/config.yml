@@ -29,7 +29,6 @@ jobs:
          command: |
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
-      - gh/setup
       - restore_cache:
            key:
               v1-deps9-{{ .Branch }}-cv58
