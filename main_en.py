@@ -50,6 +50,8 @@ def game_start():
             gameover('Yep. Don\'t enter anything else.')
     elif shoken1.lower() == 'n':
         gameover('Die then. Don\'t come back.')
+    elif shoken1.lower() == 'die' or shoken1.lower() == 'suicide':
+        gameover('Welp. He suicided. Ok, I\'ll just reset it.')
     else:
         gameover('You\'ll just die when you type anything else.')
 
