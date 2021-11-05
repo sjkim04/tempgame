@@ -23,7 +23,7 @@ WIP, working on it when I have time.
 
 ## How to play
 
-Take a look at [this repl](https://replit.com/@SungjuneKim/uuig-1), you can play them here!
+Take a look at [this repl](https://replit.com/@SungjuneKim/uuig), you can play them here!
 
 ## Credits
 
