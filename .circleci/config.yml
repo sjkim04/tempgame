@@ -8,6 +8,7 @@ orbs:
   # Python Orb documentation: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.4
   coverage-reporter: codacy/coverage-reporter@13.4
+  gh: circleci/github-cli@1.0.4
 
 # Jobs Docs: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -28,9 +29,15 @@ jobs:
          command: |
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
+      - gh/setup
       - restore_cache:
            key:
               v1-deps9-{{ .Branch }}-cv58
+      - run:
+          name: Checksum check
+          command: |
+             sha256sum Pipfile > Pipfile.sha256
+             sha256sum Pipfile.lock > Pipfile.lock.sha256
       - python/install-packages:
           pkg-manager: pipenv
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
@@ -42,10 +49,11 @@ jobs:
             - "/home/circleci/project/.venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.8/dist-packages"
-      - store_artifacts:
-         path: Pipfile
-      - store_artifacts:
-         path: Pipfile.lock
+      - run:
+          name: Check Pipfile
+          command: |
+             sha256sum Pipfile > Pipflie256.txt
+             if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]" fi
       - run:
           name: Run tests
           command: |
