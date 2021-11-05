@@ -24,8 +24,13 @@ jobs:
        PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
-      - gh/setup:
-          token: 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
+#      - gh/setup:
+#          token: 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
+      - run:
+         name: git setup
+         command: |
+            git config --global user.name "sjkim04"
+            git config --global user.email "sungntung@gmail.com"
       - run: 
          name: Give dependencies access
          command: |
