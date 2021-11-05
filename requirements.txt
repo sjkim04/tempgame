@@ -1,2 +1,0 @@
-pygame # for playing sounds
-coverage # for builds
