@@ -28,7 +28,7 @@ sjkim04 (のむチュウ) - 全てのコード。
 
 ## プレイ方法
 
-[このサイト](https://replit.com/@SungjuneKim/uuig-1)でプレイできます！
+[このサイト](https://replit.com/@SungjuneKim/uuig)でプレイできます！
 
 ## To-do
 
