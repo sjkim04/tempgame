@@ -66,7 +66,7 @@ jobs:
              sha256sum Pipfile.lock > Pipfilelock256.txt
              if cmp --silent -- "Pipfile.lock.sha256" "Pipfilelock256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.lock.sha256 Pipfilelock256.txt; git add Pipfile.lock; git commit -m "Sync Pipfile.lock [skip ci]"; fi
       - run:
-          name: Run tests
+          name: Run tests (Japanese)
           command: |
              pipenv run coverage run tests/main.py < tests/inputs/ja/input.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/ja/input1.txt
@@ -77,6 +77,18 @@ jobs:
              pipenv run coverage run --append tests/main.py < tests/inputs/ja/input6.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/ja/input7.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/ja/input8.txt
+      - run:
+          name: Run tests (English)
+          command: |
+             pipenv run coverage run tests/main.py < tests/inputs/en/input.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input1.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input2.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input3.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input4.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input5.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input6.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input7.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/enUp/input8.txt
       - run:
           name: Export XML
           command: |
