@@ -80,7 +80,7 @@ jobs:
       - run:
           name: Run tests (English)
           command: |
-             pipenv run coverage run tests/main.py < tests/inputs/en/input.txt
+             pipenv run coverage run --append tests/main.py < tests/inputs/en/input.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input1.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input2.txt
              pipenv run coverage run --append tests/main.py < tests/inputs/en/input3.txt
