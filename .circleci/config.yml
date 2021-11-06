@@ -70,7 +70,7 @@ jobs:
             name: Run tests (Japanese)
             command: |
                mkdir test-results
-               pipenv run coverage run -m pytest -s tests/inputs/ja/input.txt--junitxml=tests/test-results/junit.xml tests/main.py
+               pipenv run coverage run -m pytest -s tests/inputs/ja/input.txt --junitxml=tests/test-results/junit.xml tests/main.py
                pipenv run coverage run --append -m pytest -s tests/inputs/ja/input1.txt --junitxml=tests/test-results/junit1.xml tests/main.py
                pipenv run coverage run --append -m pytest -s tests/inputs/ja/input2.txt --junitxml=tests/test-results/junit2.xml tests/main.py
                pipenv run coverage run --append -m pytest -s tests/inputs/ja/input3.txt --junitxml=tests/test-results/junit3.xml tests/main.py
