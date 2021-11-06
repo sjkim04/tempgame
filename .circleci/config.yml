@@ -13,98 +13,98 @@ orbs:
 # Jobs Docs: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-and-test:
-    docker:
+      docker:
       - image: cimg/python:3.8
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
-    environment:
-       PIPENV_VENV_IN_PROJECT: true
-    steps:
-       - checkout
+      environment:
+        PIPENV_VENV_IN_PROJECT: true
+      steps:
+         - checkout
 #      - gh/setup:
 #          token: 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
-      - run:
-         name: git setup
-         command: |
-            git config --global user.name "sjkim04"
-            git config --global user.email "sungntung@gmail.com"
-      - run: 
-         name: Give dependencies access
-         command: |
-            sudo chown -R circleci:circleci /usr/local/bin
-            sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
-      - restore_cache:
-           key:
-              v1-deps9-{{ .Branch }}-cv58
-      - run:
-          name: Checksum check
-          command: |
-             sha256sum Pipfile > Pipfile.sha256
-             sha256sum Pipfile.lock > Pipfile.lock.sha256
-      - python/install-packages:
-          pkg-manager: pipenv
-          args: pytest pytest-cov
-          # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
-          # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
-      - save_cache:
-          key:
-             v1-deps9-{{ .Branch }}-cv58
-          paths:
-            - "/home/circleci/project/.venv"
-            - "/usr/local/bin"
-            - "/usr/local/lib/python3.8/dist-packages"
-      - run:
-          name: Check Pipfile
-          command: |
-             sha256sum Pipfile > Pipfile256.txt
-             if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]"; fi
-      - run:
-          name: Check Pipfile.lock
-          command: |
-             sha256sum Pipfile.lock > Pipfilelock256.txt
-             if cmp --silent -- "Pipfile.lock.sha256" "Pipfilelock256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.lock.sha256 Pipfilelock256.txt; git add Pipfile.lock; git commit -m "Sync Pipfile.lock [skip ci]"; fi
-      - run:
-          name: Run tests (Japanese)
-          command: |
-             pipenv run coverage run tests/main.py < tests/inputs/ja/input.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input1.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input2.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input3.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input4.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input5.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input6.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input7.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/ja/input8.txt
-      - run:
-          name: Run tests (English)
-          command: |
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input1.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input2.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input3.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input4.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input5.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input6.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input7.txt
-             pipenv run coverage run --append tests/main.py < tests/inputs/en/input8.txt
-      - run:
-          name: Export XML
-          command: |
-            pipenv run coverage report
-            pipenv run coverage xml
-      - store_test_results:
-           path: tests
-      - coverage-reporter/send_report:
-          coverage-reports: tests/reports/report.xml
-          project-token: 5b481779574d43c1970889e683dc38af
+         - run:
+            name: git setup
+            command: |
+               git config --global user.name "sjkim04"
+               git config --global user.email "sungntung@gmail.com"
+         - run: 
+            name: Give dependencies access
+            command: |
+               sudo chown -R circleci:circleci /usr/local/bin
+               sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
+         - restore_cache:
+              key:
+                 v1-deps9-{{ .Branch }}-cv58
+         - run:
+            name: Checksum check
+            command: |
+               sha256sum Pipfile > Pipfile.sha256
+               sha256sum Pipfile.lock > Pipfile.lock.sha256
+         - python/install-packages:
+            pkg-manager: pipenv
+            args: pytest pytest-cov
+            # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
+            # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
+         - save_cache:
+            key:
+               v1-deps9-{{ .Branch }}-cv58
+            paths:
+               - "/home/circleci/project/.venv"
+               - "/usr/local/bin"
+               - "/usr/local/lib/python3.8/dist-packages"
+         - run:
+            name: Check Pipfile
+            command: |
+               sha256sum Pipfile > Pipfile256.txt
+               if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]"; fi
+         - run:
+            name: Check Pipfile.lock
+            command: |
+               sha256sum Pipfile.lock > Pipfilelock256.txt
+               if cmp --silent -- "Pipfile.lock.sha256" "Pipfilelock256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.lock.sha256 Pipfilelock256.txt; git add Pipfile.lock; git commit -m "Sync Pipfile.lock [skip ci]"; fi
+         - run:
+            name: Run tests (Japanese)
+            command: |
+               pipenv run coverage run tests/main.py < tests/inputs/ja/input.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input1.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input2.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input3.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input4.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input5.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input6.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input7.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input8.txt
+         - run:
+            name: Run tests (English)
+            command: |
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input1.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input2.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input3.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input4.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input5.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input6.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input7.txt
+               pipenv run coverage run --append tests/main.py < tests/inputs/en/input8.txt
+         - run:
+            name: Export XML
+            command: |
+               pipenv run coverage report
+               pipenv run coverage xml
+         - store_test_results:
+            path: tests
+         - coverage-reporter/send_report:
+            coverage-reports: tests/reports/report.xml
+            project-token: 5b481779574d43c1970889e683dc38af
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  test: # This is the name of the workflow, feel free to change it to better match your workflow.
+   test: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
-    jobs:
-      - build-and-test
+      jobs:
+         - build-and-test
