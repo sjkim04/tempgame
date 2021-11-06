@@ -46,6 +46,7 @@ jobs:
                  v1-deps9-{{ .Branch }}-cv58
          - python/install-packages:
             pkg-manager: pipenv
+            args: junitparser
             # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
             # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
          - save_cache:
@@ -68,34 +69,38 @@ jobs:
          - run:
             name: Run tests (Japanese)
             command: |
-               pipenv run coverage run tests/main.py < tests/inputs/ja/input.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input1.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input2.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input3.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input4.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input5.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input6.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input7.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/ja/input8.txt
+               mkdir test-results
+               pipenv run coverage run -m pytest --junitxml=tests/test-results/junit.xml tests/main.py < tests/inputs/ja/input.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit1.xml tests/main.py < tests/inputs/ja/input1.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit2.xml tests/main.py < tests/inputs/ja/input2.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit3.xml tests/main.py < tests/inputs/ja/input3.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit4.xml tests/main.py < tests/inputs/ja/input4.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit5.xml tests/main.py < tests/inputs/ja/input5.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/tests/test-results/junit6.xml tests/main.py < tests/inputs/ja/input6.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit7.xml tests/main.py < tests/inputs/ja/input7.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/junit8.xml tests/main.py < tests/inputs/ja/input8.txt
          - run:
             name: Run tests (English)
             command: |
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input1.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input2.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input3.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input4.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input5.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input6.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input7.txt
-               pipenv run coverage run --append tests/main.py < tests/inputs/en/input8.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten.xml tests/main.py < tests/inputs/en/input.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten1.xml tests/main.py < tests/inputs/en/input1.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten2.xml tests/main.py < tests/inputs/en/input2.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten3.xml tests/main.py < tests/inputs/en/input3.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten4.xml tests/main.py < tests/inputs/en/input4.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten5.xml tests/main.py < tests/inputs/en/input5.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten6.xml tests/main.py < tests/inputs/en/input6.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten7.xml tests/main.py < tests/inputs/en/input7.txt
+               pipenv run coverage run --append -m pytest --junitxml=tests/test-results/juniten8.xml tests/main.py < tests/inputs/en/input8.txt
+         - run:
+            name: Merge JUnit XMLs
+            command: pipenv run tests/merge.py
          - run:
             name: Export XML
             command: |
                pipenv run coverage report
                pipenv run coverage xml
          - store_test_results:
-            path: tests
+            path: tests/test-results
          - coverage-reporter/send_report:
             coverage-reports: tests/reports/report.xml
             project-token: 5b481779574d43c1970889e683dc38af
