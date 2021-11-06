@@ -23,7 +23,7 @@ jobs:
     environment:
        PIPENV_VENV_IN_PROJECT: true
     steps:
-      - checkout
+       - checkout
 #      - gh/setup:
 #          token: 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
       - run:
@@ -46,6 +46,7 @@ jobs:
              sha256sum Pipfile.lock > Pipfile.lock.sha256
       - python/install-packages:
           pkg-manager: pipenv
+          args: pytest pytest-cov
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file
       - save_cache:
