@@ -36,14 +36,14 @@ jobs:
             command: |
                sudo chown -R circleci:circleci /usr/local/bin
                sudo chown -R circleci:circleci /usr/local/lib/python3.8/dist-packages
-         - restore_cache:
-              key:
-                 v1-deps9-{{ .Branch }}-cv58
          - run:
             name: Checksum check
             command: |
                sha256sum Pipfile > Pipfile.sha256
                sha256sum Pipfile.lock > Pipfile.lock.sha256
+         - restore_cache:
+              key:
+                 v1-deps9-{{ .Branch }}-cv58
          - python/install-packages:
             pkg-manager: pipenv
             args: pytest pytest-cov
@@ -60,12 +60,12 @@ jobs:
             name: Check Pipfile
             command: |
                sha256sum Pipfile > Pipfile256.txt
-               if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]"; fi
+               if cmp --silent -- "Pipfile.sha256" "Pipfile256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.sha256 Pipfile256.txt; git add Pipfile; git commit -m "Sync Pipfile [skip ci]"; git push --set-upstream origin HEAD; fi
          - run:
             name: Check Pipfile.lock
             command: |
                sha256sum Pipfile.lock > Pipfilelock256.txt
-               if cmp --silent -- "Pipfile.lock.sha256" "Pipfilelock256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.lock.sha256 Pipfilelock256.txt; git add Pipfile.lock; git commit -m "Sync Pipfile.lock [skip ci]"; fi
+               if cmp --silent -- "Pipfile.lock.sha256" "Pipfilelock256.txt"; then echo "Files identical, skipping"; else echo "Files differ, uploading"; rm -f Pipfile.lock.sha256 Pipfilelock256.txt; git add Pipfile.lock; git commit -m "Sync Pipfile.lock [skip ci]"; git push --set-upstream origin HEAD; fi
          - run:
             name: Run tests (Japanese)
             command: |
