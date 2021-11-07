@@ -7,9 +7,6 @@ name = "pypi"
 pygame = "*"
 coverage = "*"
 install = "*"
-pytest = "*"
-pytest-cov = "*"
-junitparser = "*"
 
 [dev-packages]
 
