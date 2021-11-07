@@ -41,9 +41,6 @@ jobs:
             command: |
                sha256sum Pipfile > Pipfile.sha256
                sha256sum Pipfile.lock > Pipfile.lock.sha256
-         - restore_cache:
-              key:
-                 v1-deps9-{{ .Branch }}-cv58
          - python/install-packages:
             pkg-manager: pipenv
             # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
@@ -52,9 +49,6 @@ jobs:
             name: Clean pipenv
             command: |
                pipenv clean
-         - save_cache:
-            key:
-               v1-deps9-{{ .Branch }}-cv58
             paths:
                - "/home/circleci/project/.venv"
                - "/usr/local/bin"
