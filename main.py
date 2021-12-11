@@ -1,6 +1,6 @@
 from time import sleep # the module that has the ability of The World
 import sys # for killing the program when GAME OVERed
-import main_en as en
+import main_en as en # Import English version
 
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # hiding that f**king annoying message
@@ -25,27 +25,27 @@ def text_sound(voice='default'): # voices for type()
     elif voice == 'default2': # second default voice from UNDERTALE (chara)
         mixer.music.load('voices\\default2.wav')
         mixer.music.play()
-    elif voice == 'sans': #SAAAAAAAAAAAAAAAAAAAAAAAAAAANS
+    elif voice == 'sans':
         mixer.music.load('voices\\sans.wav')
         mixer.music.play()
     elif voice == 'select': # selecting commands
         mixer.music.load('voices\\select.wav')
         mixer.music.play()
-    elif voice == 'papyrus': # I, THE GREAT PAPYRUS, VOICE ACTED IN THIS GAME!
+    elif voice == 'papyrus':
         mixer.music.load('voices\\papyrus.wav')
         mixer.music.play()
 
-def langsel():
+def langsel(): # Language selection
     print('Please select your language.')
     print('English/日本語')
     lang = input()
     if lang.lower() == 'english':
-        en.game_start()
+        en.game_start() # English version
     else:
         jap()
 
-def jap():
-    mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1)
+def jap(): #Japanese gameplay
+    mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1) # The void sound
     typing('始めたいなら「y」', 'default')
     shoken1 = input()
     if shoken1 == 'y':
@@ -54,7 +54,7 @@ def jap():
         typing('または「始める」を入力')
         gamestart = input('')
         if gamestart == '始める' or gamestart == 'はじめる':
-            text_sound('select')
+            text_sound('select') # selecting commands
             char_make()
         else:
             gameover('うん。変なの入力するな。')
@@ -65,7 +65,7 @@ def jap():
     else:
         gameover('なんでも入力したところで死ぬよ')
 
-def char_make():
+def char_make(): # character creation
     mixer.Channel(1).play(mixer.Sound('bgm\\chara_make.wav'), loops=-1)
     typing('あなたのキャラクターを作成します。')
     sleep(5)
@@ -97,7 +97,7 @@ def char_make():
     else:
         gameover('なんでも入力した＝死だから…')
 
-def gameover(message):
+def gameover(message): # GAME OVER
     mixer.Channel(1).play(mixer.Sound('bgm\\gameover.wav'))
     typing('GAME OVER', voice='default2', offset=0.6)
     sleep(3)
@@ -106,11 +106,11 @@ def gameover(message):
     sleep(5)
     sys.exit()
 
-def gaster_reboot():
+def gaster_reboot(): # Reboot for typing Gaster
     global reboot
     reboot += 1
     if reboot >= 3:
         gameover('お前らさーガスヒカリで遊ぶなよ！ということで殺します。')
     char_make()
 
-langsel()
+langsel() # Language selection

@@ -1,8 +1,8 @@
-from time import sleep # the module that has the ability of The World
+from time import sleep # for pauses
 import sys # for killing the program when GAME OVERed
 
 import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # hiding that f**king annoying message
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # hiding that annoying message
 
 from pygame import mixer # playing BGMs and SEs
 mixer.init()
@@ -24,18 +24,18 @@ def text_sound(voice='default'): # voices for type()
     elif voice == 'default2': # second default voice from UNDERTALE (chara)
         mixer.music.load('voices\\default2.wav')
         mixer.music.play()
-    elif voice == 'sans': #SAAAAAAAAAAAAAAAAAAAAAAAAAAANS
+    elif voice == 'sans':
         mixer.music.load('voices\\sans.wav')
         mixer.music.play()
     elif voice == 'select': # selecting commands
         mixer.music.load('voices\\select.wav')
         mixer.music.play()
-    elif voice == 'papyrus': # I, THE GREAT PAPYRUS, VOICE ACTED IN THIS GAME!
+    elif voice == 'papyrus':
         mixer.music.load('voices\\papyrus.wav')
         mixer.music.play()
 
 def game_start():
-    mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1)
+    mixer.Channel(1).play(mixer.Sound('bgm\\wind.wav'), loops=-1) # playing the BGM
     typing('Type \'y\'', 'default')
     shoken1 = input()
     if shoken1 == 'y':
@@ -56,7 +56,7 @@ def game_start():
         gameover('You\'ll just die when you type anything else.')
 
 def char_make():
-    mixer.Channel(1).play(mixer.Sound('bgm\\chara_make.wav'), loops=-1)
+    mixer.Channel(1).play(mixer.Sound('bgm\\chara_make.wav'), loops=-1) # playing the BGM
     typing('Then, let\'s make your character.')
     sleep(5)
     typing('What is your name?')
@@ -79,14 +79,14 @@ def char_make():
       typing('Oh, aren\'t you satisfied?')
       sleep(2.3)
       typing('Then we\'ll use the default settings!')
-      mixer.Channel(1).fadeout(5000)
+      mixer.Channel(1).fadeout(5000) # fading out the BGM
       sleep(3)
       typing('GAME START', 'sans', 0.3)
     else:
         gameover('Wait, are you serious? I\'ll kill you for now.')
 
 def gameover(message):
-    mixer.Channel(1).play(mixer.Sound('bgm\\gameover.wav'))
+    mixer.Channel(1).play(mixer.Sound('bgm\\gameover.wav')) # playing the GAME OVER BGM
     typing('GAME OVER', voice='default2', offset=0.6)
     sleep(3)
     typing(message, 'default2', 0.07)
@@ -94,7 +94,7 @@ def gameover(message):
     sleep(5)
     sys.exit()
 
-def gaster_reboot():
+def gaster_reboot(): # Reboot for typing Gaster
     global reboot
     reboot += 1
     if reboot >= 3:
